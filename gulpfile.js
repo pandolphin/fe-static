@@ -22,7 +22,7 @@ var src_dir = 'src',
 
 var jsChannel = {
   // 文本替换
-  replace: lazypipe()
+  /*replace: lazypipe()
     .pipe(function () {
       return _if(/loader\/require\/index\.js/, 
         lazypipe()
@@ -31,6 +31,7 @@ var jsChannel = {
         ()
       );
     }),
+    */
   // 文件压缩
   compress: lazypipe()
     .pipe(uglify)
@@ -70,9 +71,6 @@ gulp.task('serve', function () {
       middleware: function (req, res, next) {
         res.setHeader('Access-Control-Allow-Origin', '*');  // 跨域请求支持
         next();
-      },
-      routes: {
-        '/base-tech-fe/data-fe': 'build'
       }
     }
   });
@@ -83,12 +81,12 @@ gulp.task('serve', function () {
 // 通用打包流程
 gulp.task('build', ['clean', 'hint'], function () {
   gulp.src([src_dir + '/**/*.js'])
-    .pipe(jsChannel.replace())
+    //.pipe(jsChannel.replace())
     .pipe(jsChannel.compress())
     .pipe(gulp.dest(build_dir));
   gulp.src([src_dir + '/loader/require/require.js',
     src_dir + '/loader/require/index.js'])
-    .pipe(jsChannel.replace())
+    //.pipe(jsChannel.replace())
     .pipe(concat('loader.js', {newLine: ';'}))
     .pipe(jsChannel.compress())
     .pipe(gulp.dest(build_dir + '/loader/require/'));
