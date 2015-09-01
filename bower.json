@@ -1,0 +1,22 @@
+{
+  "name": "fe-static",
+  "version": "0.0.1",
+  "homepage": "https://github.com/pandolphin/fe-static",
+  "authors": [
+    "zicheng.lj <zicheng.lj@taobao.com>"
+  ],
+  "description": "static repo",
+  "license": "MIT",
+  "private": true,
+  "directory": "src/vendor",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

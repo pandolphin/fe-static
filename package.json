@@ -1,0 +1,33 @@
+{
+  "name": "data-fe",
+  "version": "1.0.0",
+  "description": "数据工程公共组件库",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "海炎",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
+  },
+  "devDependencies": {
+    "browser-sync": "~2.8.0",
+    "del": "~1.2.0",
+    "gulp": "~3.9.0",
+    "gulp-concat": "~2.6.0",
+    "gulp-if": "~1.2.5",
+    "gulp-jade": "~1.1.0",
+    "gulp-jshint": "~1.11.2",
+    "gulp-match": "~0.2.1",
+    "gulp-minify-css": "~1.2.0",
+    "gulp-replace": "^0.5.3",
+    "gulp-uglify": "~1.2.0",
+    "gulp-wrap-amd": "~0.5.0",
+    "jshint-stylish": "~2.0.1",
+    "lazypipe": "~1.0.1"
+  },
+  "cdnUrlPro": "//g.alicdn.com/",
+  "cdnUrlDaily": "//g.assets.daily.taobao.net/",
+  "cdnPath": "base-tech-fe/data-fe/"
+}
