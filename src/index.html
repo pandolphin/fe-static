@@ -9,9 +9,18 @@
 <script src="scripts/index.js"></script>  
 <script>
   require(['jquery', 'bootstrap'], function($){
-    $('body').html('hello');
-   console.log('load success');
+    $(function(){
+
+      // Twitter Bootstrap 3 carousel plugin
+      $("#element").carousel();
+    });
   });
 </script>
+<div id="element">hello world</div>
+<div class="demo1">
+  <p>  <a href="./demo1.html">demo1</a></p>
+  <p>  <a href="./demo2.html">demo2</a></p>
+
+</div>
 </body>
 </html>

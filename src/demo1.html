@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<style>
+abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+.back, .flip-container, .front {
+    width: 237px;
+    height: 250px;
+}
+.flip-container {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000; /*透视;单位是像素*/
+    -ms-transform: perspective(1000px);
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    position: relative;
+}
+.flip-container.hover .back,.flip-container:hover .back{
+  -webkit-transform:rotateY(0deg);
+  -moz-transform:rotateY(0deg);
+  -o-transform:rotateY(0deg);
+  -ms-transform:rotateY(0deg);
+  transform:rotateY(0deg);
+}
+.flip-container.hover .front,.flip-container:hover .front{
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);
+  transform:rotateY(180deg);
+}
+.flipper {
+    -webkit-transition: .6s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: .6s;
+    -moz-transition: .6s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: .6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+#box-about-topcoder .front {
+    background: #e6d9fc;
+}
+.front {
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    background: #fff;
+    z-index: 2;
+    border-radius: 5px!important;
+    justify-content: center;
+    resize: vertical;
+    overflow: visible!important;
+    height: 250px;
+    min-height: 250px;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: table;
+}
+
+.back, .front {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: .6s;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateY(0deg);
+    -moz-transition: .6s;
+    -moz-transform-style: preserve-3d;
+    -moz-transform: rotateY(0deg);
+    -o-transition: .6s;
+    -o-transform-style: preserve-3d;
+    -o-transform: rotateY(0deg);
+    -ms-transition: .6s;
+    -ms-transform-style: preserve-3d;
+    -ms-transform: rotateY(0deg);
+    transition: .6s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front .name {
+    color: #3d3d3d;
+    font-size: 30px!important;
+    font-weight: 200!important;
+    line-height: 32px;
+    text-align: center;
+    word-wrap: normal;
+    display: table-cell!important;
+    zoom: 1;
+    vertical-align: middle;
+    width: auto;
+    height: auto;
+    padding: 0 15px!important;
+    position: relative;
+}
+#box-about-topcoder .back {
+    background: #9f70fe;
+    color: #fff;
+}
+.back {
+    background: #337ab7;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    position: relative;
+    border-radius: 5px!important;
+}
+.back .excerpt {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    text-wrap: normal;
+    padding: 15px!important;
+}
+.excerpt {
+    margin-bottom: 10px;
+}
+.excerpt {
+    line-height: 20px;
+}
+.back .read-more {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+a, a:active, a:visited {
+    text-decoration: none;
+    outline: 0;
+}
+a {
+    cursor: pointer;
+}
+a {
+    background: 0 0;
+}
+#box-about-topcoder {
+  padding: 20px;
+}
+
+</style>
+<body>
+<div id="box-about-topcoder">
+  <div class="flip-container box-16708" >
+    <div class="flipper">
+      <div class="front">
+        <span class="name">
+          Amazing Members </span>
+      </div>
+      <div class="back"> 
+        <span class="excerpt">
+          The Topcoder community is made up of the world’s best talent, working together in one place to compete, collaborate and learn from one another.                                     </span>
+        <a href="https://www.topcoder.com/member-onboarding/amazing-members/" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div> 
+  <div class="flip-container box-16716" >
+    <div class="flipper">
+      <div class="front">
+        <span class="name">
+          Competing in Design Challenges                                    </span>
+      </div>
+      <div class="back"> 
+        <span class="excerpt">
+
+          There are many types of challenges found within the Design track. Here are the primary challenge types, each with interesting problems to solve                                    </span>
+        <a href="https://www.topcoder.com/member-onboarding/competing-in-design-challenges/" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
